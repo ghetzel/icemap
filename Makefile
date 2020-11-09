@@ -15,3 +15,6 @@ clean:
 
 movie: clean
 	@ffmpeg -y -r $(FPS) -pattern_type glob -i 'images/*.png' -c:v libx264 map.mp4
+
+cmp.gif:
+	convert -delay 10 -morph 10 -loop 0 images/CICE_combine_thick_SM_EN_20040901.png images/CICE_combine_thick_SM_EN_20200901.png -delay 100 images/CICE_combine_thick_SM_EN_20200901.png cmp.gif
